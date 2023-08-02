@@ -1,10 +1,14 @@
 ---
+// import Arch from '../images/arch.svg';
 const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
-	<div class="social-links">
+  <div>Inspired by SWE ppl and big dreams :')</div>
+  &copy; Ani Dev {today.getFullYear()}
+
+  <!-- extract this into a seprate comp -->
+  <!-- <div class="social-links">
 		<a href="https://m.webtoo.ls/@astro" target="_blank">
 			<svg
 				viewBox="0 0 16 16"
@@ -34,26 +38,39 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
-	</div>
+	</div> -->
+  <div class="arch">
+    i use
+    <img src="/arch.png" alt="arch" width="30" height="30" />
+    btw
+  </div>
 </footer>
+
 <style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+  .arch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    /* margin-top: 1em; */
+  }
+  footer {
+    padding: 2em 1em 2em 1em;
+    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    color: rgb(var(--gray));
+    text-align: center;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+  }
+  .social-links a {
+    text-decoration: none;
+    color: rgb(var(--gray));
+  }
+  .social-links a:hover {
+    color: rgb(var(--gray-dark));
+  }
 </style>
