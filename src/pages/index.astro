@@ -9,12 +9,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .rick {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .rick > h1 {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <Header title={SITE_TITLE} />
     <!-- <img src="/me.png" alt="Astro Logo" /> -->
     <main>
-      <h1>🧑‍🚀 Hello, Astronaut!</h1>
+      <div class="rick">
+        <img src="/ll.png" alt="😶‍🌫️" width="60" height="60" />
+        <h1>Hi there!</h1>
+      </div>
       <p>
         Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
         template. This template serves as a lightweight, minimally-styled starting
