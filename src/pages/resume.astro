@@ -1,5 +1,7 @@
 ---
+import Experience from "../components/Experience.astro";
 import Layout from "../layouts/BlogPost.astro";
+import { EXPERIENCES } from "../consts";
 ---
 
 <!-- TODO: it's now Resume page  -->
@@ -10,5 +12,52 @@ import Layout from "../layouts/BlogPost.astro";
   heroImage="/mw2.png"
   size={1000}
 >
-  hello
+  <h3 class="">Education</h3>
+  <div class="edu">
+    <img
+      src="https://jecrchackathon.in/1.0/assets/client/images/footer-logo.png"
+      alt="Jecrc logo"
+      class="resume-photo"
+    />
+
+    <div class="">
+      <h3>Jaipur Engineering College and Research Centre</h3>
+      <p>B.Tech in Artificial Intelligence & Data Science (CS) | 2021 - 25</p>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <h3 class="expe">Experience</h3>
+  {
+    EXPERIENCES.map((exp) => (
+      <Experience
+        compName={exp.compName}
+        duration={exp.duration}
+        heroImage={exp.heroImage}
+        title={exp.title}
+      />
+    ))
+  }
 </Layout>
+
+<style>
+  .expe {
+    margin-bottom: 3rem;
+  }
+  .edu {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  .edu > div {
+    font-family: "Courier New", Courier, monospace;
+    font-size: medium;
+  }
+  @media screen and (max-width: 768px) {
+    .edu {
+      grid-template-columns: 1fr; /* Change to a single column layout for screens with a width of 768px or less */
+    }
+  }
+</style>

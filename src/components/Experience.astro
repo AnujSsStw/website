@@ -1,0 +1,48 @@
+---
+// Usage: <GreetingHeadline greeting="Howdy" name="Partner" />
+interface Props {
+  heroImage: string;
+  compName: string;
+  title: string;
+  duration: string;
+}
+
+const { heroImage, compName, title, duration } = Astro.props;
+---
+
+<div class="exp">
+  <div class="ii">
+    <img src={heroImage} alt="company logo" class="compLogo" />
+  </div>
+  <div class="">
+    <h3>{compName}</h3>
+    <p>{title} | {duration}</p>
+  </div>
+</div>
+
+<style>
+  .compLogo {
+    width: 120px;
+    height: 120px;
+  }
+  .exp > div {
+    font-family: "Courier New", Courier, monospace;
+    font-size: medium;
+  }
+  .ii {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .exp {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  @media screen and (max-width: 768px) {
+    .exp {
+      grid-template-columns: 1fr; /* Change to a single column layout for screens with a width of 768px or less */
+    }
+  }
+</style>
